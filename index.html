@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meditation Station | Self-Guided Training | US Wellness</title>
+<meta name="description" content="Self-guided training for yoga and meditation instructors leading the Meditation Station: event prep, what to wear, setting up a calm space, leading sessions, and breakdown.">
+<style>
+  :root{
+    --maroon:#7C0037;
+    --maroon-dark:#5c0029;
+    --bg:#f7f5f2;
+    --card:#ffffff;
+    --text:#232323;
+    --muted:#6b6b6b;
+    --border:#e6e0da;
+    --warn:#b83227;
+    --warn-bg:#fdf1ef;
+    --info:#2b6cb0;
+    --info-bg:#eef5fc;
+    --tip:#1f7a4d;
+    --tip-bg:#eef8f2;
+    --gold:#946200;
+    --gold-bg:#fbf3e3;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;}
+  a{color:var(--maroon);}
+  img{max-width:100%;display:block;}
+
+  header.topbar{background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;}
+  .topbar-inner{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .brand{display:flex;align-items:center;gap:14px;}
+  .brand img{height:28px;width:auto;}
+  .brand-text{font-size:13px;color:var(--muted);border-left:1px solid var(--border);padding-left:14px;}
+  .brand-text strong{display:block;color:var(--text);font-size:14px;}
+  .progress-wrap{display:flex;align-items:center;gap:10px;min-width:220px;}
+  .progress-label{font-size:12px;color:var(--muted);white-space:nowrap;}
+  .progress-bar{flex:1;height:8px;border-radius:6px;background:#eee2e8;overflow:hidden;min-width:100px;}
+  .progress-fill{height:100%;background:var(--maroon);width:0%;transition:width .3s ease;}
+  .menu-toggle{display:none;background:var(--maroon);color:#fff;border:none;border-radius:6px;padding:8px 12px;font-size:14px;cursor:pointer;}
+
+  .layout{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:260px 1fr;gap:28px;padding:24px 20px 80px;}
+  nav.sidebar{align-self:start;position:sticky;top:76px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;}
+  nav.sidebar h4{margin:0 0 8px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);}
+  .nav-item{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;cursor:pointer;font-size:14px;color:var(--text);text-decoration:none;margin-bottom:2px;}
+  .nav-item:hover{background:#f6eef1;}
+  .nav-item.active{background:var(--maroon);color:#fff;}
+  .nav-item .num{width:20px;height:20px;border-radius:50%;background:#eee2e8;color:var(--maroon);font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:600;}
+  .nav-item.active .num{background:rgba(255,255,255,.25);color:#fff;}
+  .nav-item .check{margin-left:auto;color:var(--tip);font-size:13px;}
+  .nav-item.active .check{color:#fff;}
+  .nav-divider{height:1px;background:var(--border);margin:12px 0;}
+
+  .contact-card{background:#faf6f4;border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin-bottom:8px;font-size:13px;}
+  .contact-card .lbl{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);}
+  .contact-card .phone{font-size:15px;font-weight:700;color:var(--maroon);margin-top:2px;}
+  .contact-card .who{color:var(--muted);font-size:12px;}
+
+  main.content{min-width:0;}
+  .page{display:none;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:32px;}
+  .page.active{display:block;}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--maroon);background:#fbeef3;padding:5px 12px;border-radius:20px;margin-bottom:14px;}
+  h1{font-size:28px;margin:0 0 8px;}
+  h2{font-size:20px;margin:32px 0 12px;border-bottom:1px solid var(--border);padding-bottom:8px;}
+  h2:first-of-type{margin-top:8px;}
+  h3{font-size:16px;margin:20px 0 8px;}
+  p.lead{color:var(--muted);font-size:16px;margin-top:0;}
+  .tag{display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--maroon);background:#fbeef3;padding:3px 9px;border-radius:12px;margin-right:8px;vertical-align:middle;}
+
+  .snapshot-row{display:flex;gap:14px;flex-wrap:wrap;margin:20px 0;}
+  .snapshot-card{flex:1;min-width:160px;background:#faf6f4;border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+  .snapshot-card .big{font-size:22px;font-weight:700;color:var(--maroon);}
+  .snapshot-card .small{font-size:12px;color:var(--muted);margin-top:2px;}
+
+  .callout{border-radius:10px;padding:16px 18px;margin:18px 0;display:flex;gap:12px;border:1px solid;}
+  .callout .icon{font-size:20px;line-height:1;}
+  .callout .body > strong{display:block;margin-bottom:4px;font-size:14px;}
+  .callout .body ul{margin:6px 0 0;padding-left:18px;}
+  .callout .body p{margin:6px 0 0;}
+  .callout.warn{background:var(--warn-bg);border-color:#f3d4cd;color:#7a2317;}
+  .callout.info{background:var(--info-bg);border-color:#cfe0f0;color:#1c4f7a;}
+  .callout.tip{background:var(--tip-bg);border-color:#c9e6d5;color:#175a38;}
+  .callout.gold{background:var(--gold-bg);border-color:#eddcae;color:#6b4c00;}
+
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;}
+  th{background:#faf6f4;font-size:12px;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);}
+  td ul{margin:0;padding-left:18px;}
+  td ul li{margin-bottom:3px;}
+  table.qty-table{max-width:520px;}
+  table.qty-table th:last-child, table.qty-table td:last-child{text-align:right;width:160px;}
+
+  ol.steps{padding-left:20px;}
+  ol.steps li{margin-bottom:10px;}
+  ul.plain{padding-left:20px;}
+  ul.plain li{margin-bottom:6px;}
+
+  .module-list-home a{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--border);border-radius:10px;margin-bottom:8px;text-decoration:none;color:var(--text);cursor:pointer;}
+  .module-list-home a:hover{border-color:var(--maroon);}
+  .module-list-home .num{width:26px;height:26px;border-radius:50%;background:#eee2e8;color:var(--maroon);font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;}
+  .module-list-home .txt strong{display:block;font-size:14px;}
+  .module-list-home .txt span{font-size:12px;color:var(--muted);}
+
+  .page-nav{display:flex;justify-content:space-between;margin-top:32px;padding-top:20px;border-top:1px solid var(--border);}
+  .page-nav button{background:var(--maroon);color:#fff;border:none;border-radius:8px;padding:10px 18px;font-size:14px;cursor:pointer;}
+  .page-nav button.ghost{background:none;color:var(--maroon);border:1px solid var(--maroon);}
+  .start-btn{display:inline-block;margin-top:18px;background:var(--maroon);color:#fff;border:none;border-radius:8px;padding:12px 22px;font-size:15px;cursor:pointer;text-decoration:none;}
+
+  @media (max-width:860px){
+    .layout{grid-template-columns:1fr;}
+    nav.sidebar{position:fixed;top:0;left:0;height:100%;width:250px;z-index:100;transform:translateX(-110%);transition:transform .25s ease;overflow-y:auto;}
+    nav.sidebar.open{transform:translateX(0);}
+    .menu-toggle{display:inline-block;}
+    .page{padding:22px;}
+    table{display:block;overflow-x:auto;}
+  }
+
+  /* Shared additions for the reusable station trainings */
+  .illus{margin:18px 0;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:#fbf8f6;}
+  .illus svg{width:100%;height:auto;display:block;}
+  .illus .cap{font-size:12px;color:var(--muted);padding:8px 14px;border-top:1px solid var(--border);background:#fff;}
+  .wear-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
+  .wear-card{border:1px solid var(--border);border-radius:10px;padding:14px 16px;background:#faf6f4;}
+  .wear-card.yes{border-color:#c9e6d5;background:var(--tip-bg);}
+  .wear-card.no{border-color:#f3d4cd;background:var(--warn-bg);}
+  .wear-card strong{display:block;margin-bottom:6px;font-size:14px;}
+  .wear-card ul{margin:0;padding-left:18px;font-size:14px;}
+  .wear-card li{margin-bottom:4px;}
+  .checklist{list-style:none;padding:0;margin:10px 0;}
+  .checklist li{padding:8px 0 8px 30px;position:relative;border-bottom:1px solid var(--border);font-size:14.5px;}
+  .checklist li:last-child{border-bottom:none;}
+  .checklist li::before{content:"☐";position:absolute;left:4px;top:7px;color:var(--maroon);font-size:16px;}
+  @media (max-width:860px){ .wear-grid{grid-template-columns:1fr;} }
+  @media (prefers-reduced-motion: reduce){ .illus svg *{animation:none !important;} }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <button class="menu-toggle" onclick="toggleNav()">☰ Menu</button>
+      <img src="data:image/jpeg;base64,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" alt="US Wellness">
+      <div class="brand-text"><strong>Meditation Station</strong>Self-Guided Training</div>
+    </div>
+    <div class="progress-wrap">
+      <span class="progress-label" id="progressLabel">0 of 4 complete</span>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="sidebar" id="sidebar">
+    <h4>Navigation</h4>
+    <a class="nav-item" data-page="home" onclick="goTo('home')">🏠 Quick Reference<span class="check" id="check-home"></span></a>
+    <div class="nav-divider"></div>
+    <h4>Modules</h4>
+    <a class="nav-item" data-page="prep" onclick="goTo('prep')"><span class="num">1</span> Before the Event<span class="check" id="check-prep"></span></a>
+    <a class="nav-item" data-page="setup" onclick="goTo('setup')"><span class="num">2</span> Setting Up the Space<span class="check" id="check-setup"></span></a>
+    <a class="nav-item" data-page="sessions" onclick="goTo('sessions')"><span class="num">3</span> Leading Sessions<span class="check" id="check-sessions"></span></a>
+    <a class="nav-item" data-page="breakdown" onclick="goTo('breakdown')"><span class="num">4</span> Breakdown & Cleanup<span class="check" id="check-breakdown"></span></a>
+    <div class="nav-divider"></div>
+    <div class="contact-card">
+      <div class="lbl">USW On-Call</div>
+      <div class="phone">866-881-7607</div>
+      <div class="who">Call with any issue or question on event day</div>
+    </div>
+  </nav>
+
+  <main class="content">
+<!-- HOME -->
+    <section class="page" id="page-home">
+      <div class="eyebrow">Required Training · US Wellness</div>
+      <h1>Meditation Station</h1>
+      <p class="lead">Give employees an opportunity to pause, reset, and recharge during the workday. Led by a yoga or meditation instructor, this station features brief guided meditation and relaxation breathing sessions designed to reduce stress, improve focus, and promote a sense of calm. Sessions are offered throughout the event, making it easy for participants to step away, practice mindfulness, and return feeling refreshed.</p>
+
+      <div class="snapshot-row">
+        <div class="snapshot-card"><div class="big">Instructor-led</div><div class="small">Yoga or meditation instructor</div></div>
+        <div class="snapshot-card"><div class="big">Brief</div><div class="small">Short sessions throughout the event</div></div>
+        <div class="snapshot-card"><div class="big">All welcome</div><div class="small">No experience needed</div></div>
+      </div>
+
+      <h2>Critical rules at a glance</h2>
+
+      <div class="callout warn">
+        <div class="icon">📋</div>
+        <div class="body">
+          <strong>Check your event notes first</strong>
+          <ul>
+            <li>Session length and how often sessions run</li>
+            <li>Whether US Wellness is shipping supplies for your event</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout tip">
+        <div class="icon">🤫</div>
+        <div class="body">
+          <strong>Protect the calm</strong>
+          <p>Choose the quietest spot available, keep your voice soft and steady, and make it easy for participants to join or step away without disrupting others.</p>
+        </div>
+      </div>
+
+      <h2>Modules</h2>
+      <div class="module-list-home"><a onclick="goTo('prep')"><span class="num">1</span><span class="txt"><strong>Before the Event</strong><span>Event notes checklist and what to wear</span></span></a><a onclick="goTo('setup')"><span class="num">2</span><span class="txt"><strong>Setting Up the Space</strong><span>With shipped supplies or a quiet area</span></span></a><a onclick="goTo('sessions')"><span class="num">3</span><span class="txt"><strong>Leading Sessions</strong><span>Guided meditation and relaxation breathing</span></span></a><a onclick="goTo('breakdown')"><span class="num">4</span><span class="txt"><strong>Breakdown & Cleanup</strong><span>End-of-event teardown</span></span></a></div>
+      <button class="start-btn" onclick="goTo('prep')">Start: Before the Event →</button>
+    </section>
+
+    <!-- BEFORE THE EVENT -->
+    <section class="page" id="page-prep">
+      <div class="eyebrow">📋 Module 01</div>
+      <h1>Before the Event</h1>
+      <p class="lead">Session timing and supplies vary by event. Review your event notes before you arrive.</p>
+
+      <h2>Event notes checklist</h2>
+      <ul class="checklist">
+        <li><strong>Session schedule</strong> — how long each session runs and how often</li>
+        <li><strong>Supplies</strong> — whether US Wellness is shipping supplies for your event</li>
+        <li><strong>Location and arrival time</strong> — where your station is and when to arrive for setup</li>
+      </ul>
+
+      <h2>What to wear</h2>
+      <p>Instructors wear <strong>athletic clothing</strong>. It must be full coverage and not tight.</p>
+      <div class="wear-grid">
+        <div class="wear-card yes"><strong>✓ Wear</strong><ul><li>Full-coverage athletic clothing</li><li>Athletic shoes</li><li>US Wellness name badge, if provided</li></ul></div>
+        <div class="wear-card no"><strong>✗ Don't wear</strong><ul><li>Tight or form-fitting clothing</li><li>Crop tops, sports bras worn alone, or short shorts</li><li>Jeans</li></ul></div>
+      </div>
+      <div class="page-nav">
+        <button class="ghost" onclick="goTo('home')">← Quick Reference</button>
+        <button onclick="goTo('setup')">Next: Setting Up the Space →</button>
+      </div>
+    </section>
+
+    <!-- SETUP -->
+    <section class="page" id="page-setup">
+      <div class="eyebrow">🛠️ Module 02</div>
+      <h1>Setting Up the Space</h1>
+      <p class="lead">Your setup depends on whether US Wellness ships supplies for your event. Either way, the goal is the same: a quiet, comfortable space where participants can settle in quickly.</p>
+
+      <div class="illus">
+        <svg viewBox="0 0 720 280" role="img" aria-label="Illustration of the station: an instructor seated facing a small group in a quiet area, with a breathing circle that slowly expands and contracts">
+          <style>
+            .breath{animation:breath 8s ease-in-out infinite;transform-origin:360px 110px;}
+            @keyframes breath{0%,100%{transform:scale(.7);opacity:.35}50%{transform:scale(1.1);opacity:.7}}
+          </style>
+          <rect width="720" height="280" fill="#fbf8f6"/>
+          <rect y="200" width="720" height="80" fill="#efe7e1"/>
+          <circle class="breath" cx="360" cy="110" r="70" fill="#eee2e8"/>
+          <!-- instructor -->
+          <g fill="#7C0037">
+            <circle cx="360" cy="104" r="14"/>
+            <path d="M338 160 Q360 118 382 160 Z"/>
+            <ellipse cx="360" cy="166" rx="34" ry="9"/>
+          </g>
+          <!-- participants -->
+          <g fill="#6b8f80">
+            <circle cx="180" cy="176" r="12"/><path d="M162 224 Q180 188 198 224 Z"/><ellipse cx="180" cy="228" rx="28" ry="7"/>
+            <circle cx="280" cy="186" r="12"/><path d="M262 234 Q280 198 298 234 Z"/><ellipse cx="280" cy="238" rx="28" ry="7"/>
+            <circle cx="440" cy="186" r="12"/><path d="M422 234 Q440 198 458 234 Z"/><ellipse cx="440" cy="238" rx="28" ry="7"/>
+            <circle cx="540" cy="176" r="12"/><path d="M522 224 Q540 188 558 224 Z"/><ellipse cx="540" cy="228" rx="28" ry="7"/>
+          </g>
+          <text x="360" y="40" text-anchor="middle" font-size="13" fill="#6b6b6b" font-family="Segoe UI, Arial">breathe in … breathe out</text>
+        </svg>
+        <div class="cap">Illustration — participants face the instructor in the quietest area available.</div>
+      </div>
+
+      <h2>If US Wellness ships supplies</h2>
+      <ol class="steps">
+        <li><strong>Confirm the shipment arrived</strong> and everything listed in your event notes is there.</li>
+        <li><strong>Arrange the supplies</strong> so participants face you, with enough room to sit comfortably.</li>
+        <li><strong>Set up signage</strong> showing session times, if provided.</li>
+      </ol>
+
+      <h2>If no supplies are shipped</h2>
+      <ol class="steps">
+        <li><strong>Find the quietest area available</strong> — away from speakers, foot traffic, and food stations.</li>
+        <li><strong>Use the seating that's there</strong> — chairs work well for brief seated meditation and breathing.</li>
+        <li><strong>Make your session times easy to find</strong>, for example by letting the event organizer know when sessions start.</li>
+      </ol>
+      <div class="page-nav">
+        <button class="ghost" onclick="goTo('prep')">← Before the Event</button>
+        <button onclick="goTo('sessions')">Next: Leading Sessions →</button>
+      </div>
+    </section>
+
+    <!-- SESSIONS -->
+    <section class="page" id="page-sessions">
+      <div class="eyebrow">🧘 Module 03</div>
+      <h1>Leading Sessions</h1>
+      <p class="lead">Sessions are brief guided meditation and relaxation breathing practices, run on the schedule in your event notes. Keep them accessible to everyone — no experience needed.</p>
+
+      <h2>Session flow</h2>
+      <ol class="steps">
+        <li><strong>Welcome participants</strong> and let them know they can join or leave at any time.</li>
+        <li><strong>Invite them to get comfortable</strong> — feet on the floor, hands resting, eyes closed or softly focused.</li>
+        <li><strong>Guide relaxation breathing</strong> to help everyone settle in.</li>
+        <li><strong>Lead a brief guided meditation</strong> using your professional judgment and the time available.</li>
+        <li><strong>Close gently</strong> — invite participants to notice how they feel, and share a simple technique they can use at work.</li>
+      </ol>
+
+      <h2>Between sessions</h2>
+      <ul class="plain">
+        <li>Greet people who walk by and let them know when the next session starts.</li>
+        <li>Answer questions about meditation and breathing.</li>
+        <li>Reset the space so it's ready for the next group.</li>
+      </ul>
+
+      <h2>Conversation starters</h2>
+      <p>No script needed — pick whatever fits the moment.</p>
+
+      <h3>Inviting people in</h3>
+      <ul class="plain">
+        <li>"Our next session starts in a few minutes — want to take a short break with us?"</li>
+        <li>"Have you ever tried guided meditation? No experience needed."</li>
+        <li>"Need a moment to reset? It's just a few minutes."</li>
+      </ul>
+
+      <h3>After a session</h3>
+      <ul class="plain">
+        <li>"How do you feel compared to when you sat down?"</li>
+        <li>"When during your workday could you use that breathing technique?"</li>
+        <li>"What usually helps you unwind after a stressful day?"</li>
+      </ul>
+
+      <div class="callout info">
+        <div class="icon">💬</div>
+        <div class="body">
+          <strong>Keep it general</strong>
+          <p>Meditation and breathing are wellness practices, not treatment. If someone shares that they're struggling with stress, anxiety, or their mental health, listen kindly and encourage them to reach out to their healthcare provider or their employer's employee assistance program.</p>
+        </div>
+      </div>
+      <div class="page-nav">
+        <button class="ghost" onclick="goTo('setup')">← Setting Up the Space</button>
+        <button onclick="goTo('breakdown')">Next: Breakdown & Cleanup →</button>
+      </div>
+    </section>
+
+    <!-- BREAKDOWN -->
+    <section class="page" id="page-breakdown">
+      <div class="eyebrow">📦 Module 04</div>
+      <h1>Breakdown &amp; Cleanup</h1>
+      <p class="lead">End-of-event teardown — leave the space as calm and clean as you found it.</p>
+
+      <ol class="steps">
+        <li><strong>If supplies were shipped</strong>, pack them up and handle them as described in your event notes.</li>
+        <li><strong>Return any furniture you moved</strong> to where you found it.</li>
+        <li><strong>Leave the space clean.</strong></li>
+      </ol>
+
+      <div class="callout info">
+        <div class="icon">📞</div>
+        <div class="body">
+          <strong>Questions or issues on event day</strong>
+          <p>Call USW On-Call at <strong>866-881-7607</strong>.</p>
+        </div>
+      </div>
+      <div class="page-nav">
+        <button class="ghost" onclick="goTo('sessions')">← Leading Sessions</button>
+        <button onclick="goTo('home')">Finish ↩ Quick Reference</button>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+  const pages = ["home", "prep", "setup", "sessions", "breakdown"];
+  const moduleIds = ["prep", "setup", "sessions", "breakdown"];
+  const storeKey = "usw-training-meditation-station";
+  let completed = {};
+  try { completed = JSON.parse(localStorage.getItem(storeKey) || '{}'); } catch(e) { completed = {}; }
+  function saveProgress(){ try { localStorage.setItem(storeKey, JSON.stringify(completed)); } catch(e){} }
+  function updateProgressBar(){
+    const done = moduleIds.filter(id => completed[id]).length;
+    document.getElementById('progressLabel').textContent = done + ' of ' + moduleIds.length + ' complete';
+    document.getElementById('progressFill').style.width = (done / moduleIds.length * 100) + '%';
+    pages.forEach(id => { const c = document.getElementById('check-' + id); if(c) c.textContent = completed[id] ? '✓' : ''; });
+  }
+  function goTo(id){
+    completed[id] = true; saveProgress();
+    pages.forEach(p => {
+      document.getElementById('page-' + p).classList.toggle('active', p === id);
+      document.querySelector('.nav-item[data-page="' + p + '"]').classList.toggle('active', p === id);
+    });
+    updateProgressBar();
+    window.scrollTo({top:0, behavior:'smooth'});
+    if(window.innerWidth <= 860) document.getElementById('sidebar').classList.remove('open');
+  }
+  function toggleNav(){ document.getElementById('sidebar').classList.toggle('open'); }
+  updateProgressBar();
+  goTo('home');
+</script>
+</body>
+</html>
